@@ -1,0 +1,307 @@
+{
+  "_说明": "主参考图清单。refs 顺序对应提示词里的 image[1]、image[2]…；每张图自动接 canon 和 style_suffix，总长不超 1800 字符。用法：uv run tools/tripo_scene.py --only 13_书生三视图。01~12 是怪化猫版（上游参考，2026-10-23 转向后不再重出），13 起是唐风志异版。",
+  "style_suffix": "Style: Tang-dynasty mural animation, 2D cel illustration, entirely flat colours with no gradients and no realistic lighting, every surface shows a fine mineral-pigment silk-wall grain with faint craquelure, thin reddish-brown ink outlines (never pure black), bold Tang patterns (lotus medallions, pearl roundels, scrolling vines). No text, no logos, no watermark.",
+  "canon": "Consistency rules: use only the 12 colours of the palette image (silk cream, vermilion, earth red, gold, malachite green, azurite blue, purple, ochre brown, lacquer black, powder skin, rouge pink, reddish-brown outline).",
+  "model_suffix": "Style: 2D cel sheet for 3D modelling reference: entirely flat colours, no gradients, no lighting, no cast shadows, NO paper texture, clean thin reddish-brown outlines, plain flat cream background. No text, no logos, no watermark.",
+  "scenes": [
+    {
+      "id": "13_书生三视图",
+      "size": "3840x2160",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/36_书生脸_三选一.png",
+        "assets/concept/scenes/35_竹笈.png",
+        "assets/concept/scenes/13_书生三视图_v1方箱.png"
+      ],
+      "prompt": "Character turnaround sheet of the wandering Tang-dynasty scholar, the Recorder of Strange Things. Three views on one sheet: front, side profile, back; neutral standing pose, same scale, feet on one baseline. Face exactly like the MIDDLE portrait of image[2]: gold irises with a pale ring, a faint knowing half-smile, a small round bronze mirror-shaped forehead mark with a grape-vine rim between the brows, and long sharp vermilion brush-flick strokes sweeping from the outer eye corners up to the temples. Black soft-winged futou cap with two flaps behind the head. Clothes, belt, boots, brush in the right hand and bronze mirror at the left hip exactly as in image[4]. On his back, instead of a box, the bamboo book-frame from image[3]: an open bamboo frame rising above his head with shelves of scrolls and books, a small round cream parasol canopy over his head and a tiny lantern hanging from its rim. Plain cream background. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high"
+    },
+    {
+      "id": "14_寺院回廊全景",
+      "size": "3840x2160",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/02_走廊全景.png"
+      ],
+      "prompt": "Tang-dynasty temple corridor, same composition as image[2]: a dead-straight one-point-perspective corridor seen from its centre. A row of vermilion round wooden columns on stone bases down each side. Both walls are covered edge to edge by Tang Dunhuang-style murals: flying apsaras, a flower-scattering celestial maiden, pavilions of a paradise scene, in silk cream, earth red, azurite blue and malachite green with reddish-brown outlines, some patches flaked away showing ochre plaster. Floor of malachite-green square bricks stamped with lotus medallions, ochre joints, with an earth-red brick path edged in thin gold running down the centre to the far end. Under the eaves, tall silk banners hang down alternately azurite blue and vermilion, each with pearl-roundel pattern, and a line of small bronze bells. Stone lanterns with gold flames spaced along both sides at floor level. Coffered ceiling of square panels, purple ground with gold lotus medallions. At the far end a hall door of gold lattice stands half open, glowing vermilion and cream inside. Completely empty, no people. Palette: image[1]. Use image[2] ONLY for composition, paper grain and line treatment; do not copy its Japanese content.",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high"
+    },
+    {
+      "id": "15_书生_建模三视图",
+      "size": "3840x2160",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/15_书生_建模三视图_v2鬓发.png",
+        "assets/concept/scenes/36_书生脸_三选一.png"
+      ],
+      "prompt": "Modelling turnaround of the scholar in image[2], keeping exactly the same face, face markings, cap, robe, half-arm jacket, belt, boots, A-pose and three-view layout. ONE change only: NO loose hair at all. All hair is pulled back tightly into a bun completely hidden under the black futou cap; a clean, neat hairline at the forehead and temples; no side locks, no strands framing the face, no bangs, ears and cheeks fully visible. Face markings as in the MIDDLE portrait of image[3]: small round bronze mirror-shaped mark between the brows, long vermilion brush-flick strokes from the eye corners up to the temples, gold irises, faint half-smile. Palms open and empty; nothing on the back. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "16_孟龙潭_三视图",
+      "size": "3840x2160",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/13_书生三视图.png"
+      ],
+      "prompt": "Modelling turnaround sheet of Meng Longtan, a young Tang-dynasty scholar: strict A-pose, arms down at 30 degrees, palms open and empty. Three views: front, side profile, back; same scale, feet on one baseline. Round face, worried raised brows, no beard, hair tied under a black soft-winged futou cap with flaps. Cream round-collar robe with a fine ochre scrolling-vine border, azurite-blue belt with gold fittings, black boots. Same proportions and line treatment as the scholar in image[2], but a plainer, rounder, more anxious man. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "17_老僧_三视图",
+      "size": "3840x2160",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/13_书生三视图.png"
+      ],
+      "prompt": "Modelling turnaround of an old Tang-dynasty monk: strict A-pose, arms down at 30 degrees, palms open and empty. Three views: front, side profile, back; same scale, feet on one baseline. Shaved head, long white brows, calm half-closed eyes, thin and slightly stooped. Ochre-brown kasaya robe draped over the left shoulder in a patchwork rice-field grid with azurite-blue seams, cream under-robe, straw sandals, a string of black prayer beads around the neck. Same proportions and line treatment as image[2]. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "18_天女_三视图",
+      "size": "3840x2160",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/13_书生三视图.png"
+      ],
+      "prompt": "Modelling turnaround of the flower-scattering celestial maiden from a Tang Dunhuang mural, as a standing figure: strict A-pose, arms down at 30 degrees, palms open and empty. Three views: front, side profile, back; same scale, feet on one baseline. Young girl with hair in two loose childlike tufts (unmarried chuitiao style), round face, rouge slanted strokes at the eye corners, vermilion dot between the brows. Azurite-blue bodice with lotus medallions, rouge-pink long skirt with pearl roundels, gold necklace and armlets, a long purple silk stole draped over both arms and hanging to the knees, bare feet on a lotus. Same proportions and line treatment as image[2]. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "19_朱生_三视图",
+      "size": "3840x2160",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/13_书生三视图.png"
+      ],
+      "prompt": "Modelling sheet of Zhu, a young Tang scholar who has vanished into a mural: standing A-pose, arms down at 30 degrees, palms open and empty, three views: front, side profile, back; same scale, feet on one baseline. NO cap: hair in a plain topknot tied with a cord. Dazed half-open eyes. Plain azurite-blue round-collar robe with no pattern, ochre belt, black boots. Same proportions and line treatment as image[2]. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "20_金甲使者_三视图",
+      "size": "3840x2160",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/13_书生三视图.png"
+      ],
+      "prompt": "Modelling turnaround of the Gold-Armoured Envoy, a temple guardian in the form of Lu Wu from the Classic of Mountains and Seas: a tiger-bodied creature standing upright on two legs like a man, with a calm human face framed by a tiger's striped mane, nine long tiger tails fanned out behind. Strict A-pose, arms down at 30 degrees, hands open and EMPTY, no weapon. Three views: front, side profile, back; same scale, feet on one baseline. Gold lamellar armour over chest and shoulders with a vermilion sash, ochre-and-black tiger stripes on the fur, gold chains wrapped around the forearms, black claws. About twice the scholar's bulk. Same flat style and line treatment as image[2]. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "21_书箧",
+      "size": "2048x2048",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/13_书生三视图.png"
+      ],
+      "prompt": "Single object for 3D modelling: the woven bamboo book-chest from image[2], shown alone, three-quarter front view, centred, complete and uncropped. A rectangular backpack chest of ochre-brown woven bamboo with black lacquer edges, gold corner fittings and a gold lock plate, two brown leather shoulder straps, a cream paper scroll tied on top with a vermilion cord. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "22_海兽葡萄镜",
+      "size": "2048x2048",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/13_书生三视图.png"
+      ],
+      "prompt": "Single object for 3D modelling: a Tang bronze sea-beast-and-grapevine mirror, shown alone, centred, complete. Two views side by side: the patterned back (gold bronze with a relief of crouching beasts among grapevines and birds, a knob in the centre, patches of malachite-green patina) and the plain mirror face (pale gold). A vermilion silk cord with a tassel tied through the knob. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "23_兽首笔",
+      "size": "2048x2048",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/13_书生三视图.png"
+      ],
+      "prompt": "Single object for 3D modelling: a large Tang writing brush, shown alone, centred, complete, lying slightly diagonal. Black lacquer handle with fine gold scrolling-vine inlay, a bronze cap shaped like a snarling beast head at the top, a vermilion tassel, white goat-hair tip ending in a black ink point. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "24_幞头_道具",
+      "size": "2048x2048",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/13_书生三视图.png"
+      ],
+      "prompt": "Single object for 3D modelling: a Tang black soft futou cap lying on the floor, shown alone, three-quarter view, centred, complete. Black stiffened gauze, a rounded crown, two soft flaps trailing out behind; a little crumpled as if dropped. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "25_石灯",
+      "size": "2048x2048",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/14_寺院回廊全景.png"
+      ],
+      "prompt": "Single object for 3D modelling: the stone lantern from image[2], shown alone, three-quarter view, centred, complete. Cream stone base and square pillar, a dark lacquered lattice lamp house with four lattice windows showing a gold flame inside, a small tiled roof with a gold finial, lotus-petal carving on the base. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "26_经幡",
+      "size": "2048x2048",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/14_寺院回廊全景.png"
+      ],
+      "prompt": "Single object for 3D modelling: one long hanging silk temple banner from image[2], shown alone, front view, centred, complete, hanging straight from a short gold crossbar with a cream tassel at the bottom. Azurite-blue silk with a column of cream pearl-roundel medallions and a vermilion border. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "27_殿门",
+      "size": "2048x2048",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/14_寺院回廊全景.png"
+      ],
+      "prompt": "Single object for 3D modelling: one leaf of the hall door from image[2], shown alone, front view, centred, complete. A tall rectangular door leaf: gold open lattice in the upper two thirds, a solid vermilion panel below with a gold lotus medallion, black lacquer frame, gold hinge straps. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "28_香炉",
+      "size": "2048x2048",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/14_寺院回廊全景.png"
+      ],
+      "prompt": "Single object for 3D modelling: a large Tang bronze incense burner, shown alone, three-quarter view, centred, complete. A round tripod cauldron on three beast-paw legs, two upright loop handles, a domed pierced lid with a gold lion knob, gold bronze with malachite-green patina. No smoke. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "29_禅床",
+      "size": "2048x2048",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/14_寺院回廊全景.png"
+      ],
+      "prompt": "Single object for 3D modelling: a Tang-style low wooden couch bed, shown alone, three-quarter view, centred, complete. Black lacquer frame with gold scrolling-vine inlay, a low three-sided lattice railing, an ochre-brown woven mat, a folded purple silk quilt with lotus medallions at one end, legs high enough to show the dark space underneath. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "30_僧案与木鱼",
+      "size": "2048x2048",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/14_寺院回廊全景.png"
+      ],
+      "prompt": "Single object group for 3D modelling: a low Tang monk's writing desk, shown alone, three-quarter view, centred, complete. Plain ochre-brown wood desk with curved cloud-shaped legs; on it a black lacquered wooden fish drum with its stick, an unrolled cream paper scroll held by a stone paperweight, an inkstone and a short brush. Everything resting on the desk, nothing else. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "31_朱砂柱",
+      "size": "2048x2048",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/14_寺院回廊全景.png"
+      ],
+      "prompt": "Single object for 3D modelling: one vermilion round wooden column from image[2], shown alone, front view, centred, complete, with its cream stone lotus-petal base at the bottom and a simple gold bracket cap at the top. Plain vermilion shaft, no pattern, tall and narrow. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "32_画中殿",
+      "size": "3840x2160",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/14_寺院回廊全景.png"
+      ],
+      "prompt": "Interior of a hall inside a Tang mural, seen from a 45-degree oblique bird's-eye view with no vanishing point as in Tang ruled-line paintings, roof removed: a square room with silk-cream walls covered in dense lotus medallions and scrolling vines, a low black lacquer couch bed with a purple quilt against the far wall, a flower basket on a stand, petals scattered on a malachite-green floor, vermilion columns at the four corners, a round moon window showing painted clouds. Drawn more densely patterned and more faded than the real corridor in image[2], as if it were itself a painting. No people. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high"
+    },
+    {
+      "id": "33_院子与壁画出口",
+      "size": "3840x2160",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/14_寺院回廊全景.png"
+      ],
+      "prompt": "A Tang temple courtyard, fixed side view like a stage, 2.39:1 framing: a malachite-green paved yard, a large bronze incense burner with green patina in the centre, a blossoming peach tree in rouge pink at the left, the corridor's mural wall at the back with a flying apsara and a tall painted gate in it, cream sky with gold and pink scrolling clouds, a few stone lanterns. Match the murals, columns and line treatment of image[2]. No people. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high"
+    },
+    {
+      "id": "34_画壁_证物图标",
+      "size": "3840x1920",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/13_书生三视图.png"
+      ],
+      "prompt": "A sheet of eight square game item icons arranged in a strict 4 by 2 grid of equal cells separated by thin reddish-brown lines, each icon a single object centred on a plain cream square, flat colours, thin outlines, no text. Top row, left to right: (1) a black Tang soft futou cap lying crumpled on the floor; (2) a small section of a Dunhuang-style mural showing a flower-scattering celestial maiden with, faintly behind her, the shadow of a young man in an azurite-blue robe; (3) a torn sheet of cream paper with a few columns of black brush calligraphy, the lower half missing; (4) a dark stone tablet whose carved characters are reversed, mirror-written, in gold. Bottom row: (5) one broken link of a heavy gold chain; (6) a round bronze mirror face reflecting a woman's head seen from behind with her hair in a tall spiral bun; (7) a round bronze mirror face reflecting the dark space under a low couch bed with a pale face peering out; (8) the back of a Tang bronze sea-beast-and-grapevine mirror with a vermilion silk cord, same style as the mirror in image[2]. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "35_竹笈",
+      "size": "2048x2048",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/13_书生三视图.png"
+      ],
+      "prompt": "Single object for 3D modelling: the bamboo book-frame backpack (fuji) carried by a travelling Tang-dynasty scholar, as in the famous painting of the monk Xuanzang carrying sutras. Shown alone, three-quarter back view, centred, complete and uncropped. An open ladder-like frame of ochre-brown bamboo poles lashed with black cords, narrower than a man's shoulders and about 1.2 m tall, so it rises well above the wearer's head; three open shelves inside stacked with cream and vermilion scroll bundles and a few thread-bound books; a small round parasol canopy of cream silk with a gold rim mounted on a short pole at the top, slightly tilted forward; a tiny paper lantern hanging from the canopy edge; two leather shoulder straps on the flat back side. NOT a closed box, NOT a chest, no lid, no lock plate. Palette: image[1]. Use image[2] only for line treatment and colour style.",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    },
+    {
+      "id": "36_书生脸_三选一",
+      "size": "3840x2160",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/13_书生三视图.png"
+      ],
+      "prompt": "Character face design sheet: three head-and-shoulders portraits of the SAME young Tang-dynasty scholar from image[2] (same black soft-winged futou cap, same azurite robe collar, same slim face shape), side by side, three-quarter view, each a different face design. LEFT: mismatched eyes, the left iris gold, the right iris solid ink-black with a tiny white ring, as if one eye sees this world and the other sees the world inside the mirror; a long ink-black brushstroke runs down from under the right eye like a dried ink tear; thin vermilion dot between the brows. MIDDLE: between the brows a small round bronze mirror-shaped forehead mark with a grape-vine rim; the rouge slanted strokes at the eye corners turned into long sharp vermilion brush flicks sweeping up to the temples; gold irises with a pale ring; a faint knowing half-smile. RIGHT: haunted ghost-story scholar: very pale skin, faint purple shadows under long half-closed eyes, one thin lock of white hair falling over the forehead from under the cap, lips pressed, an ink-stained middle finger raised to the chin. Plain cream background, no scene. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high"
+    },
+    {
+      "id": "37_书生_头部三视图",
+      "size": "3840x2160",
+      "refs": [
+        "assets/concept/00_色板.png",
+        "assets/concept/scenes/36_书生脸_三选一.png",
+        "assets/concept/scenes/15_书生_建模三视图.png"
+      ],
+      "prompt": "High-resolution modelling sheet of the scholar's HEAD ONLY, for painting a face texture: head and neck down to the top of the collar, three views side by side at exactly the same scale and the same eye height: front view, side profile, back view. FRONT VIEW: perfectly frontal and level, eyes looking straight at the viewer, chin not lowered, head not tilted, face symmetrical, both ears equally visible. Face exactly like the MIDDLE portrait of image[2]: gold irises with a pale ring and a small dark pupil, thin long black brows, a faint knowing half-smile; between the brows a small round bronze mirror-shaped mark with a grape-vine rim; long sharp vermilion brush-flick strokes from the outer eye corners sweeping up to the temples, thick at the start, tapering to a point. Hair and cap exactly as in image[3]: black soft-winged futou cap, two flaps hanging behind, ALL hair pulled back under the cap, clean hairline, NO loose strands, NO side locks, ears and cheeks fully visible. White inner collar edge only at the very bottom. Large, crisp, clean lines; the face fills most of each cell. Palette: image[1].",
+      "model": "chat_image_2.5_sunburst",
+      "quality": "high",
+      "suffix": "model"
+    }
+  ]
+}

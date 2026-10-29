@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>画壁 · 灰盒游戏台</title>
+  <style>
+    /* 唐风 12 色（docs/02_设定.md）。变量名沿用怪化猫版的位置：coral=朱砂 crimson=土红 ochre=金 teal=石绿 wisteria=绛紫 navy=墨 lavender=铅粉 */
+    :root { --paper: #EFE4CC; --ink: #4A2C1E; --coral: #D9503C; --crimson: #9C3A2F; --ochre: #D7A54A; --teal: #5FA07A; --wisteria: #74457A; --navy: #2E2723; --lavender: #F3DCC8; }
+    html, body { margin: 0; height: 100%; background: var(--navy); overflow: hidden; font-family: "Hiragino Mincho ProN", "Songti SC", "Noto Serif CJK SC", serif; color: var(--ink); }
+    #stage canvas { display: block; }
+    .paper { background: var(--paper); border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); position: relative; }
+    .paper::before { content: ""; position: absolute; inset: 0; background: url(/textures/paper.png) 0 0 / 512px; opacity: .12; mix-blend-mode: multiply; pointer-events: none; }
+    .paper > * { position: relative; }
+    #hud { position: fixed; left: 14px; top: 12px; font: 12px/1.6 -apple-system, "Hiragino Sans GB", sans-serif; color: var(--paper); opacity: .8; pointer-events: none; }
+    #prompt { position: fixed; left: 50%; bottom: 17%; transform: translateX(-50%); padding: 6px 16px; font-size: 18px; letter-spacing: .1em; opacity: 0; transition: opacity .2s; pointer-events: none; }
+    #prompt.show { opacity: 1; }
+    #toast { position: fixed; right: 20px; top: 20px; padding: 8px 14px; font-size: 16px; opacity: 0; transform: translateY(-8px); transition: all .3s; pointer-events: none; display: flex; align-items: center; gap: 10px; }
+    #toast img { width: 44px; height: 44px; border: 1px solid var(--ink); }
+    #toast.show { opacity: 1; transform: none; }
+    #hint { position: fixed; right: 22px; bottom: 150px; max-width: 320px; font-size: 15px; color: var(--paper); text-align: right; opacity: 0; transition: opacity .6s; pointer-events: none; text-shadow: 0 0 6px var(--navy); }
+    #hint.show { opacity: .9; }
+    /* 右下角铜镜（元素 id 还叫 hud-scale） */
+    #hud-scale { position: fixed; right: 22px; bottom: 26px; display: flex; align-items: center; gap: 14px; cursor: pointer; user-select: none; }
+    #hud-scale .three { display: flex; gap: 8px; font-size: 26px; }
+    #hud-scale .three span { width: 40px; height: 40px; line-height: 40px; text-align: center; border: 2px solid var(--paper); color: var(--paper); opacity: .45; border-radius: 4px; }
+    #hud-scale .three span.lit { opacity: 1; background: var(--coral); border-color: var(--coral); color: var(--paper); }
+    #hud-scale .icon { width: 84px; height: 84px; transform-origin: 50% 12%; transition: filter .3s; border-radius: 50%; border: 2px solid var(--paper); background: var(--paper); object-fit: cover; }
+    #hud-scale.near .icon { filter: drop-shadow(0 0 10px var(--ochre)); border-color: var(--ochre); }
+    /* 对话框 */
+    #dialogue { position: fixed; left: 50%; bottom: 9%; transform: translateX(-50%) translateY(10px); width: min(900px, 86vw); padding: 18px 26px 22px; opacity: 0; transition: all .25s; cursor: pointer; }
+    #dialogue.show { opacity: 1; transform: translateX(-50%); }
+    #dialogue .name { display: inline-block; margin: -32px 0 8px -10px; padding: 2px 14px; background: var(--crimson); color: var(--paper); font-size: 16px; letter-spacing: .15em; }
+    #dialogue .text { font-size: 22px; line-height: 1.6; min-height: 2.4em; letter-spacing: .04em; }
+    #dialogue::after { content: "▼"; position: absolute; z-index: 1; right: 18px; bottom: 10px; font-size: 12px; color: var(--crimson); animation: bob 1s infinite; }
+    #dialogue.last::after { content: "●"; animation: none; }
+    @keyframes bob { 50% { transform: translateY(3px); } }
+    /* 铜镜面板（镜外 / 镜中） */
+    #scale-panel { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(42,42,78,.55); }
+    #scale-panel.show { display: flex; }
+    #scale-panel .box { width: min(1040px, 92vw); height: min(620px, 88vh); display: grid; grid-template-rows: auto 1fr auto; padding: 18px 26px; position: relative; }
+    #scale-panel .title { font-size: 24px; letter-spacing: .3em; }
+    #scale-panel .close { position: absolute; right: 14px; top: 10px; width: 32px; height: 32px; border: 2px solid var(--ink); background: none; font-size: 22px; cursor: pointer; color: var(--ink); }
+    #scale-panel .body { display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; min-height: 0; }
+    #scale-panel .inventory { overflow: auto; display: flex; flex-direction: column; gap: 8px; padding-right: 6px; }
+    #scale-panel .item { text-align: left; background: none; border: 2px solid var(--ink); padding: 6px 10px; cursor: pointer; color: var(--ink); font-family: inherit; display: flex; gap: 10px; align-items: center; }
+    #scale-panel .item img { width: 56px; height: 56px; flex: none; border: 1px solid var(--ink); }
+    #scale-panel .item b { display: block; font-size: 17px; }
+    #scale-panel .item span { font-size: 13px; line-height: 1.5; color: var(--wisteria); }
+    #scale-panel .item:hover:not(:disabled) { background: var(--ochre); }
+    #scale-panel .item.used { opacity: .35; } #scale-panel .item.onpan { border-style: dashed; opacity: .5; }
+    #scale-panel .scale { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 6px; }
+    /* 铜镜：铜色宽边 + 淡金镜面，中间一道细线分镜外 / 镜中，上方一个镜钮 + 朱砂丝绦 */
+    #scale-panel .mirror { position: relative; width: 400px; height: 400px; max-width: 100%; border-radius: 50%; border: 16px solid var(--ochre); box-shadow: 0 0 0 3px var(--ink), inset 0 0 0 3px var(--ink); background: #E3D5B2; display: grid; grid-template-columns: 1fr 2px 1fr; align-items: center; overflow: hidden; transition: transform .25s; }
+    #scale-panel .mirror .knob { position: absolute; left: 50%; top: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; background: var(--ochre); border: 3px solid var(--ink); z-index: 2; }
+    #scale-panel .mirror .divider { width: 2px; height: 100%; background: var(--ink); opacity: .35; }
+    #scale-panel .cord { width: 6px; height: 54px; background: var(--coral); border: 2px solid var(--ink); border-radius: 3px; margin-top: -2px; }
+    #scale-panel .pan { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; cursor: pointer; }
+    #scale-panel .pan .slot { width: 120px; height: 120px; border: 2px dashed var(--ink); border-radius: 8px; padding: 6px; font-size: 13px; line-height: 1.2; background: rgba(239,228,204,.55); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    #scale-panel .pan .slot img { width: 64px; height: 64px; border: 1px solid var(--ink); margin-bottom: 4px; }
+    #scale-panel .pan .slot.filled { border-style: solid; background: var(--paper); }
+    #scale-panel .pan .side { font-size: 13px; letter-spacing: .2em; color: var(--wisteria); margin-top: 10px; }
+    /* 雾：平时薄薄一层，放错起雾，配对成功镜面清 */
+    #scale-panel .fog { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 50% 45%, rgba(239,228,204,0) 30%, rgba(239,228,204,.75) 100%); opacity: .55; transition: opacity .5s; }
+    #scale-panel.wrong .fog { opacity: 1; background: rgba(239,228,204,.85); }
+    #scale-panel.wrong .mirror { animation: shiver .5s; }
+    #scale-panel.balanced .fog { opacity: 0; }
+    #scale-panel.balanced .mirror { box-shadow: 0 0 0 3px var(--ink), inset 0 0 0 3px var(--ink), 0 0 28px var(--ochre); }
+    @keyframes shiver { 20% { transform: rotate(-2deg); } 45% { transform: rotate(2deg); } 70% { transform: rotate(-1deg); } }
+    #scale-panel .result { min-height: 1.8em; font-size: 18px; text-align: center; color: var(--crimson); }
+    /* 擦除 */
+    #wipe { position: fixed; inset: 0; background: var(--paper); z-index: 50; transform: translateX(-100%); pointer-events: none; border-right: 14px solid var(--wisteria); }
+    /* 过场：夜色、白闪、字卡 */
+    #night { position: fixed; inset: 0; background: var(--navy); mix-blend-mode: multiply; opacity: 0; transition: opacity 1.2s; pointer-events: none; }
+    #flash { position: fixed; inset: 0; background: var(--paper); opacity: 0; transition: opacity .5s; pointer-events: none; }
+    #cut-text { position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(.96); padding: 18px 48px; font-size: 44px; letter-spacing: .5em; text-indent: .5em; white-space: nowrap; opacity: 0; transition: all .4s; pointer-events: none; }
+    #cut-text.show { opacity: 1; transform: translate(-50%, -50%); }
+    body.cutscene #hud-scale, body.cutscene #prompt, body.cutscene #hint, body.cutscene #toast { display: none; }
+    /* 拔剑占位、结尾卡 */
+    #ending { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; }
+    #ending.show { display: flex; }
+    #ending .box { width: min(820px, 90vw); padding: 40px 48px; text-align: center; }
+    #ending .three { font-size: 72px; letter-spacing: .4em; margin-bottom: 10px; }
+    #ending .three span { opacity: .25; } #ending .three span.lit { opacity: 1; }
+    #ending .card { font-size: 26px; margin: 10px 0 24px; }
+    #ending .lines p { margin: 6px 0; font-size: 18px; color: var(--wisteria); }
+    #ending .other { font-size: 14px; color: var(--wisteria); opacity: .7; margin-top: 12px; }
+    #ending .brand { font: 13px -apple-system, "Hiragino Sans GB", sans-serif; color: var(--crimson); margin-top: 26px; }
+    #ending .save { margin-top: 16px; padding: 8px 22px; background: var(--ink); color: var(--paper); border: 0; font-size: 16px; font-family: inherit; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div id="stage"></div>
+  <div id="hud"><span id="status">加载中…</span> · WASD 走 · E 互动 · Tab 铜镜 · N 纹样开关 · 空格推进对话</div>
+  <div id="prompt" class="paper"></div>
+  <div id="toast" class="paper"></div>
+  <div id="hint"></div>
+  <div id="hud-scale">
+    <div class="three"><span class="kata"></span><span class="makoto"></span><span class="kotowari"></span></div>
+    <img class="icon" src="/icons/scale.png" alt="铜镜">
+  </div>
+  <div id="dialogue" class="paper"><div class="name"></div><div class="text"></div></div>
+  <div id="scale-panel"><div class="box paper">
+    <div class="title"></div><button class="close"></button>
+    <div class="body">
+      <div class="inventory"></div>
+      <div class="scale">
+        <!-- 一面铜镜：左半格"镜外"、右半格"镜中"；配对成功镜面清、放错起雾 -->
+        <div class="mirror">
+          <div class="knob"></div>
+          <div class="pan left"><div class="slot"></div><div class="side">镜外</div></div>
+          <div class="divider"></div>
+          <div class="pan right"><div class="slot"></div><div class="side">镜中</div></div>
+          <div class="fog"></div>
+        </div>
+        <div class="cord"></div>
+      </div>
+    </div>
+    <div class="result"></div>
+  </div></div>
+  <div id="night"></div>
+  <div id="cut-text" class="paper"></div>
+  <div id="flash"></div>
+  <div id="ending"><div class="box paper"><div class="three"></div><div class="card"></div><div class="lines"></div><div class="other"></div><button class="save"></button><div class="brand"></div></div></div>
+  <div id="wipe"></div>
+  <script type="module" src="/src/game.js"></script>
+</body>
+</html>

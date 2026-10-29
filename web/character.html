@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>角色画风样片</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #EFE4CC; overflow: hidden; font-family: -apple-system, "Hiragino Sans GB", sans-serif; }
+    canvas { display: block; }
+    #hud { position: fixed; left: 12px; top: 12px; color: #4A2C1E; background: rgba(239,228,204,.85); padding: 8px 12px; border-radius: 6px; font-size: 13px; line-height: 1.6; max-width: 420px; }
+    #hud b { display: block; }
+    #hud .k { display: inline-block; min-width: 1.4em; padding: 0 4px; margin-right: 2px; border: 1px solid #4A2C1E; border-radius: 3px; text-align: center; font-size: 11px; }
+  </style>
+</head>
+<body>
+  <div id="hud"><b>书生 · 平涂 + 描边 + 绢壁</b><span id="status">加载中…</span><br>
+    鼠标拖动转 · 滚轮缩放 · <span class="k">1</span>全身 <span class="k">2</span>脸 <span class="k">3</span>背面 <span class="k">4</span>斜侧<br>
+    <span class="k">T</span>平涂开关 <span class="k">O</span>描边开关 <span class="k">P</span>和纸开关 <span class="k">L</span>宽银幕黑边<br>
+    <span class="k">5</span>到<span class="k">9</span>切动作：<span id="anims">（模型没带动画）</span>
+  </div>
+  <script type="module" src="/src/character.js"></script>
+</body>
+</html>

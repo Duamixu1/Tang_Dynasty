@@ -1,0 +1,92 @@
+{
+  "_说明": "线索的位置和解锁条件，铜镜引导用。坐标系同 world/cameras.json。requires 是 state 里的路径，全部为真才算“可发现”；没满足时互动会说 locked 指向的 script.scholar 那一句。npc 类线索由对话给出，位置取 NPC 站位。画中殿（Z2b）只能从东壁进出，里面的线索都要 enteredPainting。",
+  "scale": {
+    "radius": 8,
+    "ringSteps": [
+      0.33,
+      0.66,
+      0.9
+    ]
+  },
+  "painting": {
+    "requires": [
+      "lit.zhuang",
+      "lit.shi"
+    ],
+    "locked": "painting_before",
+    "inside": [
+      4.4,
+      0,
+      -10.9
+    ],
+    "outside": [
+      -1.6,
+      0,
+      -6
+    ]
+  },
+  "clues": {
+    "E1": {
+      "position": [
+        -1.4,
+        0,
+        -4.6
+      ],
+      "requires": [],
+      "how": "pick"
+    },
+    "E2": {
+      "position": [
+        -3,
+        1.5,
+        -6
+      ],
+      "requires": [],
+      "how": "mirror"
+    },
+    "E3": {
+      "npc": "meng",
+      "requires": []
+    },
+    "E4": {
+      "position": [
+        6,
+        0,
+        -6.8
+      ],
+      "requires": [
+        "met.monk"
+      ],
+      "locked": "desk_before",
+      "how": "mirror"
+    },
+    "E5": {
+      "position": [
+        4.2,
+        0,
+        -12.0
+      ],
+      "requires": [
+        "enteredPainting"
+      ],
+      "how": "pick"
+    },
+    "E6a": {
+      "npc": "tiannv",
+      "requires": [
+        "enteredPainting"
+      ]
+    },
+    "E6b": {
+      "position": [
+        7.7,
+        0,
+        -10.9
+      ],
+      "requires": [
+        "enteredPainting"
+      ],
+      "how": "mirror"
+    }
+  }
+}

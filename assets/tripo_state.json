@@ -1,0 +1,98 @@
+{
+  "book_chest": {
+    "concept_file": "assets/concept/scenes/21_书箧.png",
+    "model_task": "fb7367a2-db74-4cb0-aa49-e64be9084813",
+    "credits": {
+      "model": 30.0
+    },
+    "model_file": "assets/tripo_raw/book_chest.glb"
+  },
+  "mirror": {
+    "concept_file": "assets/concept/scenes/22_海兽葡萄镜_背面.png",
+    "model_task": "8f180815-b44d-4a0f-bfca-b8994aa69f9a",
+    "credits": {
+      "model": 40.0
+    },
+    "model_file": "assets/tripo_raw/mirror.glb"
+  },
+  "brush": {
+    "concept_file": "assets/concept/scenes/23_兽首笔.png",
+    "model_task": "b55e2fb4-101f-4fa0-8bcd-5a35e301c810",
+    "credits": {
+      "model": 30.0
+    },
+    "model_file": "assets/tripo_raw/brush.glb"
+  },
+  "futou": {
+    "concept_file": "assets/concept/scenes/24_幞头_道具.png",
+    "model_task": "dbe6b268-f625-49d1-8605-df4a5ae2fd2f",
+    "credits": {
+      "model": 30.0
+    },
+    "model_file": "assets/tripo_raw/futou.glb"
+  },
+  "stone_lantern": {
+    "concept_file": "assets/concept/scenes/25_石灯.png",
+    "model_task": "1d6f2330-f9d1-4570-82ee-289c322192ea",
+    "credits": {
+      "model": 30.0
+    },
+    "model_file": "assets/tripo_raw/stone_lantern.glb"
+  },
+  "banner": {
+    "concept_file": "assets/concept/scenes/26_经幡.png",
+    "model_task": "23bfaa9a-7853-4cb1-8cf8-3e2cdb65e686",
+    "credits": {
+      "model": 30.0
+    },
+    "model_file": "assets/tripo_raw/banner.glb"
+  },
+  "hall_door": {
+    "concept_file": "assets/concept/scenes/27_殿门.png",
+    "model_task": "e66b722d-b3f3-4367-aee6-81eb6231aa38",
+    "credits": {
+      "model": 30.0
+    },
+    "model_file": "assets/tripo_raw/hall_door.glb"
+  },
+  "censer": {
+    "concept_file": "assets/concept/scenes/28_香炉.png",
+    "model_task": "f6f4a793-107b-48bf-905b-0273221b134f",
+    "credits": {
+      "model": 40.0
+    },
+    "model_file": "assets/tripo_raw/censer.glb"
+  },
+  "bed": {
+    "concept_file": "assets/concept/scenes/29_禅床.png",
+    "model_task": "3ddf3e6e-0714-44c3-8c27-6b6843d508cf",
+    "credits": {
+      "model": 30.0
+    },
+    "model_file": "assets/tripo_raw/bed.glb"
+  },
+  "desk_fish": {
+    "concept_file": "assets/concept/scenes/30_僧案与木鱼.png",
+    "model_task": "d1fe2fcc-779f-4edd-9a63-a6481dccc07a",
+    "credits": {
+      "model": 30.0
+    },
+    "model_file": "assets/tripo_raw/desk_fish.glb"
+  },
+  "column": {
+    "concept_file": "assets/concept/scenes/31_朱砂柱.png",
+    "model_task": "4a29cc8d-92d2-4c8e-b430-ef5b14aabe70",
+    "credits": {
+      "model": 30.0
+    },
+    "model_file": "assets/tripo_raw/column.glb"
+  },
+  "book_frame": {
+    "concept_file": "assets/concept/scenes/35_竹笈.png",
+    "model_task": "6acdde1a-3d4e-48df-8b4b-7d6c29dac6a1",
+    "credits": {
+      "model": 40.0
+    },
+    "model_file": "assets/tripo_raw/book_frame.glb"
+  }
+}

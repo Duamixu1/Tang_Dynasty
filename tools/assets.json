@@ -1,0 +1,187 @@
+{
+  "_说明": "3D 素材的唯一清单（《画壁》，见 docs/09）。tripo_gen.py 按这里生成：source 直接用 scenes.json 出的 2D 概念图做 image-to-model，不再走 image-to-image。height 单位米，tris 是面数上限（Tripo 的 face_limit）。batch 1 人物、2 道具、3 环境摆设；later 为 true 的默认不生成。绑骨不在这里做：人物统一走 tools/tripo_anim.py（v1.0 biped，和手 K 姿势库的骨骼名一致）。",
+  "model_defaults": {
+    "model": "v3.1-20260211",
+    "texture": true,
+    "pbr": false,
+    "texture_quality": "standard"
+  },
+  "assets": [
+    {
+      "id": "scholar",
+      "batch": 1,
+      "height": 1.75,
+      "tris": 60000,
+      "texture_quality": "detailed",
+      "source": "assets/concept/scenes/15_书生_建模三视图.png",
+      "note": "主角。空手 A 字姿势，道具另挂；人物走 tripo_v2.py（三视图切片 → 多视图 → 绑骨），不走这里",
+      "scene": "全程",
+      "later": true
+    },
+    {
+      "id": "meng",
+      "batch": 1,
+      "height": 1.7,
+      "tris": 40000,
+      "texture_quality": "detailed",
+      "source": "assets/concept/scenes/16_孟龙潭_三视图.png",
+      "note": "孟龙潭；人物走 tripo_v2.py（三视图切片 → 多视图 → 绑骨），不走这里",
+      "scene": "客房",
+      "later": true
+    },
+    {
+      "id": "monk",
+      "batch": 1,
+      "height": 1.6,
+      "tris": 40000,
+      "texture_quality": "detailed",
+      "source": "assets/concept/scenes/17_老僧_三视图.png",
+      "note": "老僧；人物走 tripo_v2.py（三视图切片 → 多视图 → 绑骨），不走这里",
+      "scene": "僧房",
+      "later": true
+    },
+    {
+      "id": "tiannv",
+      "batch": 1,
+      "height": 1.65,
+      "tris": 60000,
+      "texture_quality": "detailed",
+      "source": "assets/concept/scenes/18_天女_三视图.png",
+      "note": "天女，披帛要在 Blender 拆层挂骨链；人物走 tripo_v2.py（三视图切片 → 多视图 → 绑骨），不走这里",
+      "scene": "画中殿",
+      "later": true
+    },
+    {
+      "id": "zhu",
+      "batch": 1,
+      "height": 1.72,
+      "tris": 30000,
+      "source": "assets/concept/scenes/19_朱生_三视图.png",
+      "note": "朱生，一个姿势，不绑骨；人物走 tripo_v2.py（三视图切片 → 多视图 → 绑骨），不走这里",
+      "scene": "结局",
+      "later": true
+    },
+    {
+      "id": "envoy",
+      "batch": 1,
+      "height": 2.6,
+      "tris": 80000,
+      "texture_quality": "detailed",
+      "source": "assets/concept/scenes/20_金甲使者_三视图.png",
+      "note": "金甲使者（陆吾形），先静态；人物走 tripo_v2.py（三视图切片 → 多视图 → 绑骨），不走这里",
+      "scene": "院子",
+      "later": true
+    },
+    {
+      "id": "book_chest",
+      "batch": 2,
+      "height": 0.55,
+      "tris": 8000,
+      "source": "assets/concept/scenes/21_书箧.png",
+      "note": "挂书生背后",
+      "scene": "全程"
+    },
+    {
+      "id": "mirror",
+      "batch": 2,
+      "height": 0.18,
+      "tris": 4000,
+      "texture_quality": "detailed",
+      "source": "assets/concept/scenes/22_海兽葡萄镜_背面.png",
+      "note": "挂腰 + 配对界面",
+      "scene": "全程"
+    },
+    {
+      "id": "brush",
+      "batch": 2,
+      "height": 0.45,
+      "tris": 3000,
+      "source": "assets/concept/scenes/23_兽首笔.png",
+      "note": "手持挂点",
+      "scene": "全程"
+    },
+    {
+      "id": "futou",
+      "batch": 2,
+      "height": 0.2,
+      "tris": 2000,
+      "source": "assets/concept/scenes/24_幞头_道具.png",
+      "note": "E1，地上",
+      "scene": "回廊"
+    },
+    {
+      "id": "stone_lantern",
+      "batch": 2,
+      "height": 1.3,
+      "tris": 5000,
+      "source": "assets/concept/scenes/25_石灯.png",
+      "note": "回廊两侧复制",
+      "scene": "回廊"
+    },
+    {
+      "id": "banner",
+      "batch": 2,
+      "height": 2.4,
+      "tris": 3000,
+      "source": "assets/concept/scenes/26_经幡.png",
+      "note": "朱砂版靠着色器换色",
+      "scene": "回廊"
+    },
+    {
+      "id": "hall_door",
+      "batch": 2,
+      "height": 3.0,
+      "tris": 6000,
+      "source": "assets/concept/scenes/27_殿门.png",
+      "note": "一扇，复制两扇",
+      "scene": "回廊尽头"
+    },
+    {
+      "id": "censer",
+      "batch": 3,
+      "height": 1.2,
+      "tris": 12000,
+      "texture_quality": "detailed",
+      "source": "assets/concept/scenes/28_香炉.png",
+      "note": "院子中央",
+      "scene": "院子"
+    },
+    {
+      "id": "bed",
+      "batch": 3,
+      "height": 0.7,
+      "tris": 5000,
+      "source": "assets/concept/scenes/29_禅床.png",
+      "note": "E5 在床下",
+      "scene": "画中殿"
+    },
+    {
+      "id": "desk_fish",
+      "batch": 3,
+      "height": 0.45,
+      "tris": 6000,
+      "source": "assets/concept/scenes/30_僧案与木鱼.png",
+      "note": "E4 题记在案上",
+      "scene": "僧房"
+    },
+    {
+      "id": "column",
+      "batch": 3,
+      "height": 3.2,
+      "tris": 2000,
+      "source": "assets/concept/scenes/31_朱砂柱.png",
+      "note": "灰盒里复制",
+      "scene": "回廊"
+    },
+    {
+      "id": "book_frame",
+      "batch": 2,
+      "height": 1.25,
+      "tris": 12000,
+      "texture_quality": "detailed",
+      "source": "assets/concept/scenes/35_竹笈.png",
+      "note": "竹笈（负笈），替换 book_chest；挂书生背后",
+      "scene": "全程"
+    }
+  ]
+}

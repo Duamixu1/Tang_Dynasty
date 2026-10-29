@@ -1,0 +1,275 @@
+{
+ "_说明": "散花天女姿势库（画中人）。拈花：右手抬到肩前，指尖向上；左手微张托着披帛。整体往左胯轻倚（S 形），头往右偏一点，敦煌菩萨的站法。呼吸慢，偶尔低头一笑。 chains：两条紫色披帛、两条挂在臂上的绿飘带按颜色挑出来各建骨链（4 / 3 节），挂在小臂上但始终下垂，动作里慢慢飘。",
+ "bind_fix": {
+  "L_Upperarm": {
+   "roll": -20
+  },
+  "R_Upperarm": {
+   "roll": 20
+  }
+ },
+ "poses": {
+  "stand": {
+   "Hip": {
+    "move": [
+     0.008,
+     0,
+     0
+    ],
+    "roll": 3
+   },
+   "Spine01": {
+    "roll": -3
+   },
+   "Spine02": {
+    "roll": -2
+   },
+   "Head": {
+    "roll": 6,
+    "pitch": 3
+   },
+   "R_Upperarm": {
+    "pitch": -18,
+    "roll": 4
+   },
+   "R_Forearm": {
+    "pitch": -100,
+    "yaw": 25
+   },
+   "L_Upperarm": {
+    "pitch": -4,
+    "roll": -4
+   },
+   "L_Forearm": {
+    "pitch": -25,
+    "yaw": -15
+   },
+   "R_Thigh": {
+    "pitch": -4,
+    "roll": -2
+   },
+   "R_Calf": {
+    "pitch": -8
+   }
+  },
+  "breathe": {
+   "base": "stand",
+   "Spine02": {
+    "pitch": -1.5,
+    "roll": -2.5
+   },
+   "Head": {
+    "roll": 7
+   },
+   "Hip": {
+    "move": [
+     0.008,
+     0,
+     0.003
+    ]
+   }
+  },
+  "smile": {
+   "base": "breathe",
+   "Head": {
+    "pitch": 10,
+    "roll": 9,
+    "yaw": -4
+   }
+  },
+  "talk_a": {
+   "base": "stand",
+   "Head": {
+    "roll": 3,
+    "pitch": 5,
+    "yaw": 4
+   },
+   "L_Upperarm": {
+    "pitch": -22,
+    "roll": -6
+   },
+   "L_Forearm": {
+    "pitch": -55,
+    "yaw": -20
+   }
+  }
+ },
+ "animations": {
+  "idle_k": {
+   "fps": 24,
+   "keys": [
+    [
+     "stand",
+     0
+    ],
+    [
+     "breathe",
+     48
+    ],
+    [
+     "stand",
+     96
+    ],
+    [
+     "breathe",
+     144
+    ],
+    [
+     "smile",
+     168
+    ],
+    [
+     "smile",
+     210
+    ],
+    [
+     "breathe",
+     234
+    ],
+    [
+     "stand",
+     264
+    ]
+   ]
+  },
+  "talk_k": {
+   "fps": 24,
+   "keys": [
+    [
+     "stand",
+     0
+    ],
+    [
+     "talk_a",
+     14
+    ],
+    [
+     "talk_a",
+     40
+    ],
+    [
+     "smile",
+     56
+    ],
+    [
+     "stand",
+     74
+    ]
+   ]
+  }
+ },
+ "chains": {
+  "pibo_L": {
+   "parent": "L_Upperarm",
+   "bones": 4,
+   "hang": true,
+   "sway": {
+    "amp": 4,
+    "period": 96,
+    "lag": 0.7
+   },
+   "mask": {
+    "hue": [
+     0.74,
+     0.92
+    ],
+    "sat_min": 0.12,
+    "val_min": 0.2,
+    "side": "L",
+    "min_abs_x": 0.1,
+    "dom": [
+     "L_Forearm",
+     "L_Hand",
+     "L_Upperarm"
+    ],
+    "grow": 0.012
+   }
+  },
+  "pibo_R": {
+   "parent": "R_Upperarm",
+   "bones": 4,
+   "hang": true,
+   "sway": {
+    "amp": 4,
+    "period": 96,
+    "lag": 0.7
+   },
+   "mask": {
+    "hue": [
+     0.74,
+     0.92
+    ],
+    "sat_min": 0.12,
+    "val_min": 0.2,
+    "side": "R",
+    "min_abs_x": 0.1,
+    "dom": [
+     "R_Forearm",
+     "R_Hand",
+     "R_Upperarm"
+    ],
+    "grow": 0.012
+   }
+  },
+  "ribbon_L": {
+   "parent": "L_Upperarm",
+   "bones": 3,
+   "hang": true,
+   "sway": {
+    "amp": 5,
+    "period": 72,
+    "lag": 0.8
+   },
+   "mask": {
+    "hue": [
+     0.33,
+     0.43
+    ],
+    "sat_min": 0.15,
+    "val_min": 0.3,
+    "side": "L",
+    "min_abs_x": 0.05,
+    "z": [
+     0.2,
+     0.66
+    ],
+    "dom": [
+     "L_Forearm",
+     "L_Hand",
+     "L_Upperarm"
+    ],
+    "grow": 0.01
+   }
+  },
+  "ribbon_R": {
+   "parent": "R_Upperarm",
+   "bones": 3,
+   "hang": true,
+   "sway": {
+    "amp": 5,
+    "period": 72,
+    "lag": 0.8
+   },
+   "mask": {
+    "hue": [
+     0.33,
+     0.43
+    ],
+    "sat_min": 0.15,
+    "val_min": 0.3,
+    "side": "R",
+    "min_abs_x": 0.05,
+    "z": [
+     0.2,
+     0.66
+    ],
+    "dom": [
+     "R_Forearm",
+     "R_Hand",
+     "R_Upperarm"
+    ],
+    "grow": 0.01
+   }
+  }
+ }
+}

@@ -1,0 +1,58 @@
+{
+  "scholar": {
+    "model_task": "e5d10b9e-5f50-4049-b22f-e2c0cd68ffd6",
+    "model_file": "assets/tripo_raw/scholar.glb",
+    "rigcheck_task": "82efa97f-3f92-4d64-a164-81ca9b2e7d8c",
+    "rig_task": "6f39749a-837f-44a4-8b5e-e53868cd8466",
+    "rig_file": "assets/tripo_raw/anims/scholar_rigged.glb"
+  },
+  "meng": {
+    "model_task": "6875db6c-c5e0-433e-a564-dd01f0a64b0d",
+    "model_file": "assets/tripo_raw/meng.glb",
+    "rigcheck_task": "3c066d42-66ee-47e7-b77d-c8e6d8399346",
+    "rig_task": "abafa503-acbf-450a-8c48-13cc27a4a7a7",
+    "rig_file": "assets/tripo_raw/anims/meng_rigged.glb"
+  },
+  "monk": {
+    "model_task": "364c417c-f106-496b-b608-7b570467d1fd",
+    "model_file": "assets/tripo_raw/monk.glb",
+    "rigcheck_task": "a93d2a6d-9fb1-4160-b224-5a0ecf74aec4",
+    "rig_task": "3387243a-f006-4ca1-bf1e-43f36af53b67",
+    "rig_file": "assets/tripo_raw/anims/monk_rigged.glb"
+  },
+  "tiannv": {
+    "model_task": "392583f4-bcd1-4403-a4a6-6f15dd85465a",
+    "model_file": "assets/tripo_raw/tiannv.glb",
+    "rigcheck_task": "38b7d701-acb0-4e73-af6a-c91b27fc3996",
+    "rig_task": "0d4fde1a-bdf4-44d1-9ecd-d28caf038a0e",
+    "rig_file": "assets/tripo_raw/anims/tiannv_rigged.glb"
+  },
+  "zhu": {
+    "model_task": "9f495948-6f24-456f-a3f3-eeb326a10eac",
+    "model_file": "assets/tripo_raw/zhu.glb",
+    "rigcheck_task": "09fcbe91-2de5-4c09-b3b9-800ff09664f3",
+    "rig_task": "ddca2451-cee8-431c-8b2c-912daffd61b9",
+    "rig_file": "assets/tripo_raw/anims/zhu_rigged.glb"
+  },
+  "envoy": {
+    "model_task": "1f416b3e-57a3-4ad0-b896-56b910a4e9ff",
+    "model_file": "assets/tripo_raw/envoy.glb",
+    "rigcheck_task": "e9ba2597-6eba-4841-85c1-22cd5fe8c4f7",
+    "rig_task": "ed641bc4-1807-4c0f-b64b-e74152f673e3",
+    "rig_file": "assets/tripo_raw/anims/envoy_rigged.glb"
+  },
+  "scholar_v2": {
+    "model_task": "f8b50f26-5fd6-4452-b55a-55cf212ae3b2",
+    "model_file": "assets/tripo_raw/scholar_v2.glb",
+    "rigcheck_task": "5fc402c6-5bab-4cb2-add7-c5ee234a6301",
+    "rig_task": "e73e01f7-872e-4c50-b227-11e866b17717",
+    "rig_file": "assets/tripo_raw/anims/scholar_v2_rigged.glb"
+  },
+  "scholar_v3": {
+    "model_task": "24128fdc-571d-43f8-b49e-ae6c25e19a87",
+    "model_file": "assets/tripo_raw/scholar_v3.glb",
+    "rigcheck_task": "27674607-651e-4817-b720-eed99ad6d0cb",
+    "rig_task": "fbecf6fd-af5d-479c-9f50-69ef67b41bc6",
+    "rig_file": "assets/tripo_raw/anims/scholar_v3_rigged.glb"
+  }
+}

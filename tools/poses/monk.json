@@ -1,0 +1,155 @@
+{
+ "_说明": "老僧姿势库（知道但不说）。单掌立胸前（右手），左手垂在腹前。动作少而慢：呼吸周期比别人长一倍，偶尔垂目；说话时只微微欠身。",
+ "bind_fix": {
+  "L_Upperarm": {
+   "roll": -38
+  },
+  "R_Upperarm": {
+   "roll": 38
+  }
+ },
+ "poses": {
+  "stand": {
+   "Spine01": {
+    "pitch": 3
+   },
+   "Spine02": {
+    "pitch": 3
+   },
+   "Head": {
+    "pitch": 4
+   },
+   "R_Upperarm": {
+    "pitch": -14,
+    "roll": 8
+   },
+   "R_Forearm": {
+    "pitch": -100,
+    "yaw": 35
+   },
+   "L_Upperarm": {
+    "pitch": -6,
+    "roll": -6
+   },
+   "L_Forearm": {
+    "pitch": -55,
+    "yaw": -35
+   }
+  },
+  "breathe": {
+   "base": "stand",
+   "Spine02": {
+    "pitch": 4
+   },
+   "Head": {
+    "pitch": 5
+   },
+   "Hip": {
+    "move": [
+     0,
+     0,
+     0.003
+    ]
+   }
+  },
+  "eyes_down": {
+   "base": "breathe",
+   "Head": {
+    "pitch": 12
+   },
+   "NeckTwist01": {
+    "pitch": 3
+   }
+  },
+  "bow": {
+   "base": "stand",
+   "Spine01": {
+    "pitch": 7
+   },
+   "Spine02": {
+    "pitch": 7
+   },
+   "Head": {
+    "pitch": 8
+   }
+  },
+  "talk_a": {
+   "base": "stand",
+   "Head": {
+    "pitch": 8,
+    "yaw": 3
+   },
+   "Spine02": {
+    "pitch": 6
+   }
+  }
+ },
+ "animations": {
+  "idle_k": {
+   "fps": 24,
+   "keys": [
+    [
+     "stand",
+     0
+    ],
+    [
+     "breathe",
+     60
+    ],
+    [
+     "stand",
+     120
+    ],
+    [
+     "breathe",
+     180
+    ],
+    [
+     "eyes_down",
+     210
+    ],
+    [
+     "eyes_down",
+     270
+    ],
+    [
+     "breathe",
+     300
+    ],
+    [
+     "stand",
+     336
+    ]
+   ]
+  },
+  "talk_k": {
+   "fps": 24,
+   "keys": [
+    [
+     "stand",
+     0
+    ],
+    [
+     "bow",
+     16
+    ],
+    [
+     "bow",
+     30
+    ],
+    [
+     "talk_a",
+     48
+    ],
+    [
+     "talk_a",
+     70
+    ],
+    [
+     "stand",
+     90
+    ]
+   ]
+  }
+ }
+}

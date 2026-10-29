@@ -1,0 +1,15 @@
+{
+  "_说明": "书生身上挂的道具。挂点（socket_*）由 tools/blender_pose_anim.py 按 tools/poses/scholar.json 的 sockets 生成在模型里；道具 GLB 由 tools/blender_props.py 按 tools/props.json 生成到 assets/processed/attach/，单位和角色一致（身高 1.0），原点和朝向已对好挂点，这里原样挂上不再调。 背上原来的方箱书箧（book_chest）看着像药郎的药箱，2026-10-27 换成《玄奘负笈图》式竹笈（book_frame）。",
+  "brush": {
+    "url": "processed/attach/brush.glb",
+    "socket": "socket_R_Hand"
+  },
+  "mirror": {
+    "url": "processed/attach/mirror.glb",
+    "socket": "socket_Mirror"
+  },
+  "book_frame": {
+    "url": "processed/attach/book_frame.glb",
+    "socket": "socket_Spine02"
+  }
+}

@@ -1,0 +1,494 @@
+{
+ "_说明": "书生姿势库（从药贩子 v2 的姿势库改来：同一套 Tripo biped 骨骼名，角度约定一样）。角度单位度，角色坐标系。pitch 绕左右轴：朝上的骨头（脊柱、头）正值 = 往前低；朝下的骨头（手臂、腿）正值 = 往后摆，负值 = 往前抬。yaw 绕上下轴：正值 = 往角色左边转。roll 绕前后轴：正值 = 远端往角色左边倒。move = [左, 前, 上]，模型单位（全身高 1.0）。bind_fix 把 A 字绑定姿势的手臂放下（书生空手，不像药贩子要端平右前臂）。aim = {socket, dir:[左,前,上]}：其他骨头摆完后绕前臂自转、再弯手腕，让笔尖（挂点 +Z）指向 dir。sockets 定义挂点，props 定义哪个道具挂哪个挂点（web/src/data/attach.json 同步）。",
+ "bind_fix": {
+  "L_Upperarm": {
+   "roll": -38
+  },
+  "R_Upperarm": {
+   "roll": 38
+  }
+ },
+ "sockets": {
+  "socket_R_Hand": {
+   "bone": "R_Hand",
+   "type": "palm",
+   "grip_ref": "front"
+  },
+  "socket_Spine02": {
+   "bone": "Spine02",
+   "type": "back",
+   "dz": -0.04
+  },
+  "socket_Mirror": {
+   "bone": "Spine01",
+   "type": "front",
+   "dz": -0.06,
+   "dx": 0.07
+  }
+ },
+ "props": {
+  "brush": {
+   "socket": "socket_R_Hand"
+  },
+  "book_frame": {
+   "socket": "socket_Spine02"
+  },
+  "mirror": {
+   "socket": "socket_Mirror"
+  }
+ },
+ "poses": {
+  "stand": {
+   "Spine01": {
+    "pitch": -2
+   },
+   "Spine02": {
+    "pitch": -2
+   },
+   "Head": {
+    "pitch": 2
+   },
+   "R_Upperarm": {
+    "pitch": -8,
+    "roll": 4
+   },
+   "R_Forearm": {
+    "pitch": -78
+   },
+   "aim": {
+    "socket": "socket_R_Hand",
+    "dir": [
+     0,
+     0.15,
+     1
+    ]
+   }
+  },
+  "breathe": {
+   "base": "stand",
+   "Spine02": {
+    "pitch": -3.2
+   },
+   "L_Clavicle": {
+    "roll": -1.2
+   },
+   "R_Clavicle": {
+    "roll": 1.2
+   },
+   "Head": {
+    "pitch": 2.8
+   },
+   "Hip": {
+    "move": [
+     0,
+     0,
+     0.004
+    ]
+   }
+  },
+  "glance": {
+   "base": "breathe",
+   "Head": {
+    "pitch": 1.5,
+    "yaw": 9
+   },
+   "NeckTwist02": {
+    "yaw": 4
+   }
+  },
+  "walk_contact_L": {
+   "base": "stand",
+   "Hip": {
+    "move": [
+     0,
+     0,
+     -0.006
+    ],
+    "yaw": 3
+   },
+   "Spine01": {
+    "pitch": -2,
+    "yaw": -2
+   },
+   "L_Thigh": {
+    "pitch": 12
+   },
+   "L_Calf": {
+    "pitch": 1
+   },
+   "L_Foot": {
+    "pitch": -8
+   },
+   "R_Thigh": {
+    "pitch": -9
+   },
+   "R_Calf": {
+    "pitch": -18
+   },
+   "R_Foot": {
+    "pitch": 12
+   },
+   "L_Upperarm": {
+    "pitch": -2
+   },
+   "R_Upperarm": {
+    "pitch": 2
+   }
+  },
+  "walk_pass_L": {
+   "base": "stand",
+   "Hip": {
+    "move": [
+     0,
+     0,
+     0.006
+    ]
+   },
+   "L_Thigh": {
+    "pitch": 2
+   },
+   "L_Calf": {
+    "pitch": -3
+   },
+   "R_Thigh": {
+    "pitch": 3
+   },
+   "R_Calf": {
+    "pitch": -30
+   },
+   "R_Foot": {
+    "pitch": 6
+   }
+  },
+  "walk_contact_R": {
+   "base": "stand",
+   "Hip": {
+    "move": [
+     0,
+     0,
+     -0.006
+    ],
+    "yaw": -3
+   },
+   "Spine01": {
+    "pitch": -2,
+    "yaw": 2
+   },
+   "R_Thigh": {
+    "pitch": 12
+   },
+   "R_Calf": {
+    "pitch": 1
+   },
+   "R_Foot": {
+    "pitch": -8
+   },
+   "L_Thigh": {
+    "pitch": -9
+   },
+   "L_Calf": {
+    "pitch": -18
+   },
+   "L_Foot": {
+    "pitch": 12
+   },
+   "R_Upperarm": {
+    "pitch": -2
+   },
+   "L_Upperarm": {
+    "pitch": 2
+   }
+  },
+  "walk_pass_R": {
+   "base": "stand",
+   "Hip": {
+    "move": [
+     0,
+     0,
+     0.006
+    ]
+   },
+   "R_Thigh": {
+    "pitch": 2
+   },
+   "R_Calf": {
+    "pitch": -3
+   },
+   "L_Thigh": {
+    "pitch": 3
+   },
+   "L_Calf": {
+    "pitch": -30
+   },
+   "L_Foot": {
+    "pitch": 6
+   }
+  },
+  "nod": {
+   "base": "stand",
+   "NeckTwist01": {
+    "pitch": 4
+   },
+   "Head": {
+    "pitch": 14
+   }
+  },
+  "brush_take": {
+   "base": "stand",
+   "Head": {
+    "pitch": 6
+   },
+   "R_Upperarm": {
+    "pitch": -25,
+    "roll": 8
+   },
+   "R_Forearm": {
+    "pitch": -95
+   },
+   "L_Upperarm": {
+    "pitch": -6
+   },
+   "L_Forearm": {
+    "pitch": -35
+   },
+   "aim": {
+    "socket": "socket_R_Hand",
+    "dir": [
+     0,
+     0.55,
+     -0.85
+    ]
+   }
+  },
+  "brush_hover": {
+   "base": "stand",
+   "Spine02": {
+    "pitch": -3
+   },
+   "Head": {
+    "pitch": 10
+   },
+   "R_Upperarm": {
+    "pitch": -70,
+    "roll": 10
+   },
+   "R_Forearm": {
+    "pitch": -45
+   },
+   "L_Upperarm": {
+    "pitch": -6
+   },
+   "L_Forearm": {
+    "pitch": -35
+   },
+   "aim": {
+    "socket": "socket_R_Hand",
+    "dir": [
+     0,
+     0.1,
+     -1
+    ]
+   }
+  },
+  "brush_strike": {
+   "base": "stand",
+   "Spine01": {
+    "pitch": 10,
+    "yaw": 8
+   },
+   "Spine02": {
+    "pitch": 8
+   },
+   "Head": {
+    "pitch": 14
+   },
+   "Hip": {
+    "move": [
+     0,
+     0.03,
+     -0.02
+    ]
+   },
+   "R_Thigh": {
+    "pitch": -14
+   },
+   "R_Calf": {
+    "pitch": 12
+   },
+   "L_Thigh": {
+    "pitch": 10
+   },
+   "R_Upperarm": {
+    "pitch": -45,
+    "roll": -6,
+    "yaw": 10
+   },
+   "R_Forearm": {
+    "pitch": -12
+   },
+   "L_Upperarm": {
+    "pitch": 6
+   },
+   "L_Forearm": {
+    "pitch": -30
+   },
+   "aim": {
+    "socket": "socket_R_Hand",
+    "dir": [
+     0.35,
+     0.55,
+     -0.75
+    ]
+   }
+  },
+  "brush_after": {
+   "base": "stand",
+   "Spine01": {
+    "pitch": 4
+   },
+   "Head": {
+    "pitch": 8
+   },
+   "R_Upperarm": {
+    "pitch": -15
+   },
+   "R_Forearm": {
+    "pitch": -60
+   },
+   "aim": {
+    "socket": "socket_R_Hand",
+    "dir": [
+     0,
+     0.4,
+     -0.9
+    ]
+   }
+  }
+ },
+ "animations": {
+  "idle_k": {
+   "fps": 24,
+   "keys": [
+    [
+     "stand",
+     0
+    ],
+    [
+     "breathe",
+     54
+    ],
+    [
+     "stand",
+     108
+    ],
+    [
+     "breathe",
+     150
+    ],
+    [
+     "glance",
+     168
+    ],
+    [
+     "glance",
+     210
+    ],
+    [
+     "breathe",
+     228
+    ],
+    [
+     "stand",
+     264
+    ]
+   ]
+  },
+  "walk_k": {
+   "fps": 24,
+   "keys": [
+    [
+     "walk_contact_L",
+     0
+    ],
+    [
+     "walk_pass_L",
+     12
+    ],
+    [
+     "walk_contact_R",
+     24
+    ],
+    [
+     "walk_pass_R",
+     36
+    ],
+    [
+     "walk_contact_L",
+     48
+    ]
+   ]
+  },
+  "nod_k": {
+   "fps": 24,
+   "keys": [
+    [
+     "stand",
+     0
+    ],
+    [
+     "nod",
+     7
+    ],
+    [
+     "nod",
+     13
+    ],
+    [
+     "stand",
+     22
+    ]
+   ]
+  },
+  "brush_k": {
+   "fps": 24,
+   "keys": [
+    [
+     "stand",
+     0
+    ],
+    [
+     "brush_take",
+     18
+    ],
+    [
+     "brush_take",
+     32
+    ],
+    [
+     "brush_hover",
+     46
+    ],
+    [
+     "brush_hover",
+     68
+    ],
+    [
+     "brush_strike",
+     74
+    ],
+    [
+     "brush_strike",
+     100
+    ],
+    [
+     "brush_after",
+     122
+    ],
+    [
+     "stand",
+     148
+    ]
+   ]
+  }
+ }
+}

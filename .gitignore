@@ -1,0 +1,14 @@
+# 密钥：Tripo / World Labs 的 API Key，永远不进仓库
+.env
+.env.*
+!.env.example
+
+# 依赖和构建产物
+web/node_modules/
+web/dist/
+__pycache__/
+*.pyc
+
+# 运行时的锁文件、系统文件
+*.lock
+.DS_Store

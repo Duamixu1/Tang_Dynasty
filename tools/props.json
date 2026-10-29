@@ -1,0 +1,54 @@
+{
+  "_说明": "挂在书生身上的道具（tools/blender_props.py 用）。size 是最长边的真实尺寸（米），按角色身高 1.7 米 = 模型 1.0 换算。align：sword = 最长轴转到 +Z、细的一头朝 +Z（笔就是笔尖朝 +Z）；box = 箱子的面对齐坐标轴；none = 不动。rot 是对齐之后再补的旋转（度，Blender XYZ）。anchor：grip = 握处（grip_at 是从 -Z 端量起的比例），back_face = 贴背那一面，hang = 贴身那一面偏上。tris 是减面目标。 anchor_z：back_face 时原点放在高度的哪个比例（默认 0.5 居中；竹笈 0.22，大半截往上伸过头顶）。book_chest 是早先的方箱书箧，看着像药郎的药箱，2026-10-27 换成竹笈 book_frame，留着不用。 dy：back_face 时原点再往箱体里挪多少（角色单位），绑带往前伸得多时用来把箱体贴回背上。",
+  "char_height_m": 1.7,
+  "props": {
+    "brush": {
+      "size": 0.45,
+      "align": "sword",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "anchor": "grip",
+      "grip_at": 0.42,
+      "tris": 4000
+    },
+    "book_chest": {
+      "size": 0.55,
+      "align": "box",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "anchor": "back_face",
+      "tris": 8000,
+      "depth_scale": 0.65
+    },
+    "mirror": {
+      "size": 0.18,
+      "align": "none",
+      "rot": [
+        0,
+        0,
+        -90
+      ],
+      "anchor": "hang",
+      "tris": 4000
+    },
+    "book_frame": {
+      "size": 1.35,
+      "align": "box",
+      "rot": [
+        0,
+        0,
+        -90
+      ],
+      "anchor": "back_face",
+      "tris": 12000,
+      "anchor_z": 0.22,
+      "dy": 0.06
+    }
+  }
+}

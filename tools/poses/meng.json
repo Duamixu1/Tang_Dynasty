@@ -1,0 +1,193 @@
+{
+ "_说明": "孟龙潭姿势库（朱生的朋友，慌）。骨骼名、角度约定同 scholar.json。叉手礼：两手在胸前相叠，唐人站着说话的常见手势；慌张靠频繁回头看东壁、重心来回换脚表现。",
+ "bind_fix": {
+  "L_Upperarm": {
+   "roll": -38
+  },
+  "R_Upperarm": {
+   "roll": 38
+  }
+ },
+ "poses": {
+  "stand": {
+   "Spine01": {
+    "pitch": 2
+   },
+   "Spine02": {
+    "pitch": 2
+   },
+   "Head": {
+    "pitch": 3
+   },
+   "L_Upperarm": {
+    "pitch": -4,
+    "roll": -6
+   },
+   "L_Forearm": {
+    "pitch": -112,
+    "yaw": -48
+   },
+   "R_Upperarm": {
+    "pitch": -4,
+    "roll": 6
+   },
+   "R_Forearm": {
+    "pitch": -112,
+    "yaw": 48
+   }
+  },
+  "breathe": {
+   "base": "stand",
+   "Spine02": {
+    "pitch": 1
+   },
+   "Head": {
+    "pitch": 4
+   },
+   "Hip": {
+    "move": [
+     0,
+     0,
+     0.004
+    ]
+   }
+  },
+  "shift_L": {
+   "base": "stand",
+   "Hip": {
+    "move": [
+     0.012,
+     0,
+     -0.002
+    ],
+    "roll": 2
+   },
+   "Spine01": {
+    "roll": -2
+   },
+   "R_Thigh": {
+    "pitch": -3
+   },
+   "R_Calf": {
+    "pitch": -6
+   }
+  },
+  "look_wall": {
+   "base": "stand",
+   "Spine02": {
+    "yaw": 10
+   },
+   "NeckTwist02": {
+    "yaw": 10
+   },
+   "Head": {
+    "yaw": 22,
+    "pitch": -2
+   }
+  },
+  "talk_a": {
+   "base": "stand",
+   "Spine02": {
+    "pitch": 4
+   },
+   "Head": {
+    "pitch": 6
+   },
+   "R_Upperarm": {
+    "pitch": -30,
+    "roll": 22
+   },
+   "R_Forearm": {
+    "pitch": -60,
+    "yaw": 10
+   }
+  },
+  "talk_b": {
+   "base": "talk_a",
+   "R_Upperarm": {
+    "pitch": -38,
+    "roll": 30
+   },
+   "R_Forearm": {
+    "pitch": -45,
+    "yaw": -5
+   },
+   "Head": {
+    "pitch": 2,
+    "yaw": -4
+   }
+  }
+ },
+ "animations": {
+  "idle_k": {
+   "fps": 24,
+   "keys": [
+    [
+     "stand",
+     0
+    ],
+    [
+     "breathe",
+     30
+    ],
+    [
+     "stand",
+     60
+    ],
+    [
+     "shift_L",
+     84
+    ],
+    [
+     "shift_L",
+     108
+    ],
+    [
+     "look_wall",
+     126
+    ],
+    [
+     "look_wall",
+     150
+    ],
+    [
+     "breathe",
+     172
+    ],
+    [
+     "stand",
+     192
+    ]
+   ]
+  },
+  "talk_k": {
+   "fps": 24,
+   "keys": [
+    [
+     "stand",
+     0
+    ],
+    [
+     "talk_a",
+     10
+    ],
+    [
+     "talk_b",
+     22
+    ],
+    [
+     "talk_a",
+     34
+    ],
+    [
+     "talk_b",
+     46
+    ],
+    [
+     "stand",
+     62
+    ]
+   ]
+  }
+ }
+}

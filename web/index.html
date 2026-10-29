@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>走廊泼溅查看器</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #F1E9DA; overflow: hidden; font-family: -apple-system, "Hiragino Sans GB", sans-serif; }
+    canvas { display: block; }
+    #hud { position: fixed; left: 12px; top: 12px; color: #322D48; background: rgba(241,233,218,.85); padding: 8px 12px; border-radius: 6px; font-size: 13px; line-height: 1.5; max-width: 360px; }
+    #hud b { display: block; }
+  </style>
+</head>
+<body>
+  <div id="hud"><b>走廊 · World Labs 泼溅</b><span id="status">加载中…</span><br>WASD 走动 · 鼠标拖动转头 · Q/E 升降 · 1/2/3 切换机位</div>
+  <script type="module" src="/src/viewer.js"></script>
+</body>
+</html>

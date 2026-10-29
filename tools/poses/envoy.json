@@ -1,0 +1,22 @@
+{
+  "_说明": "金甲使者（陆吾形）姿势库，只在落笔过场里出现。绑定是 A 字张爪，正好是从壁里扑出来的架势，所以 bind_fix 只把手臂收一点。尾巴：模型里九条尾巴叠成上下两团、权重挂在手臂和大腿上，这里按位置（胯骨往后 0.25 以外，身体背面在 0.21 左右）挑出来，上下两团各建一串从胯往后伸的骨链，错开节奏摆。真正拆成九条要重建模，留到以后。",
+  "bind_fix": {"L_Upperarm": {"roll": -10}, "R_Upperarm": {"roll": 10}},
+  "chains": {
+    "tails_hi": {"parent": "Hip", "axis": "back", "bones": 3, "hang": false, "sway": {"amp": 7, "period": 60, "lag": 0.9},
+      "mask": {"back": [0.25, 1.0], "z": [0.55, 0.85]}},
+    "tails_lo": {"parent": "Hip", "axis": "back", "bones": 3, "hang": false, "sway": {"amp": 8, "period": 84, "lag": 0.9},
+      "mask": {"back": [0.25, 1.0], "z": [0.28, 0.55]}}
+  },
+  "poses": {
+    "stand": {"Spine01": {"pitch": 3}, "Spine02": {"pitch": 4}, "Head": {"pitch": -2},
+      "L_Forearm": {"pitch": -20}, "R_Forearm": {"pitch": -20}},
+    "breathe": {"base": "stand", "Spine02": {"pitch": 1}, "Head": {"pitch": -4}, "L_Clavicle": {"roll": -2}, "R_Clavicle": {"roll": 2}, "Hip": {"move": [0, 0, 0.005]}},
+    "loom": {"base": "stand", "Spine01": {"pitch": 8}, "Spine02": {"pitch": 10}, "Head": {"pitch": -12},
+      "L_Upperarm": {"pitch": -45, "roll": 10}, "L_Forearm": {"pitch": -40},
+      "R_Upperarm": {"pitch": -45, "roll": -10}, "R_Forearm": {"pitch": -40}}
+  },
+  "animations": {
+    "idle_k": {"fps": 24, "keys": [["stand", 0], ["breathe", 30], ["stand", 60], ["breathe", 90], ["stand", 120]]},
+    "roar_k": {"fps": 24, "keys": [["stand", 0], ["loom", 14], ["loom", 40], ["breathe", 60], ["stand", 84]]}
+  }
+}
